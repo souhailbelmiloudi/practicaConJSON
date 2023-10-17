@@ -1,3 +1,5 @@
+
+////  1º FASE
 const miCadena =
   '[{"producto":"Manzanas","cantidad":5,"precio":1.50},{"producto":"Pan","cantidad":2,"precio":2.00},{"producto":"Leche","cantidad":1,"precio":3.00},{"producto":"Huevos","cantidad":12,"precio":0.25}]';
 
@@ -5,15 +7,65 @@ const listaCompra = JSON.parse(miCadena);
 
 const contenedor = document.getElementById("contenedor");
 const Guardad = document.getElementById("add");
+const Eliminar=document.getElementById("eliminar");
 
-Guardad.addEventListener("click", (e) => {
+const imprimirLista=()=>{
+ 
+  listaCompra.map((el, ind) => {
+     //crear un elemento Dom
+    const miEle = document.createElement("div");
+    miEle.id = ind;
+    miEle.classList.add("misElementos");
+    miEle.innerHTML = `<P>${el.producto}  ${el.cantidad} KG por  ${el.precio}  € al KG</P>`;
+    contenedor.append(miEle);
+  });
+  
+}
+
+////  2º FASE
+
+const guardarDatos=()=>{
   const ListaCompra2=JSON.stringify(listaCompra)
   localStorage.setItem("listaCompra",ListaCompra2)
-});
+};
 
-listaCompra.map((el, ind) => {
-  const miEle = document.createElement("div");
-  miEle.id = ind;
-  miEle.innerHTML = `<P>${el.producto}  ${el.cantidad} KG por  ${el.precio} al KG</P>`;
-  contenedor.append(miEle);
+const eliminarDatos=()=>{
+  localStorage.clear();
+}
+
+
+////////  3º FASE
+
+//crear una lista de id de los elemntos 
+const creaListaIds=()=>{
+  const misElementos=document.getElementsByClassName('misElementos');
+
+  let listaids = [];
+  Array.from(misElementos).forEach(element => {
+  listaids.push(element.id);
+    
 });
+  return listaids
+}
+
+// settimeout para restrasasr la ejecución de creaListaIds hasta que se ejecute los elemnetos DOm
+setTimeout(() => {
+  console.log(creaListaIds())
+}, 1);
+
+
+
+
+
+
+
+//eventos
+Guardad.addEventListener("click", (e) => {
+  guardarDatos();
+})
+
+Eliminar.addEventListener("click", (e) => {
+  eliminarDatos();
+})
+
+imprimirLista();

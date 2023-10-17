@@ -1,0 +1,34 @@
+  /* Estilo para el contenedor */
+  #contenedor {
+    border: 2px solid #000; /* Borde de 2 píxeles sólido de color negro */
+    padding: 10px; /* Espacio interno de 10 píxeles */
+}
+
+/* Estilo para el elemento */
+#elemento {
+    background-color: #0ab031; /* Color de fondo gris claro */
+    padding: 10px; /* Espacio interno de 10 píxeles */
+}
+
+/* Estilo para los botones */
+#add, #eliminar {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    padding: 10px 20px; /* Espacio interno de 10 píxeles arriba/abajo y 20 píxeles izquierda/derecha */
+    margin: 5px; /* Margen exterior de 5 píxeles en todos los lados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+
+/* Estilos para elementos con la clase "misElementos" */
+.misElementos {
+    border: 1px solid #000; /* Borde de 1 píxel sólido de color negro */
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+    padding: 10px; /* Espacio interno de 10 píxeles */
+    margin: 5px; /* Margen exterior de 5 píxeles en todos los lados */
+    font-size: 14px; /* Tamaño de fuente de 14 píxeles */
+    /* Otros estilos según tus preferencias */
+}
+
+
