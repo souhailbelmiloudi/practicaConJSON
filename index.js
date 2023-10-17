@@ -8,6 +8,8 @@ const listaCompra = JSON.parse(miCadena);
 const contenedor = document.getElementById("contenedor");
 const Guardad = document.getElementById("add");
 const Eliminar=document.getElementById("eliminar");
+const misElementos=document.getElementsByClassName('misElementos');
+
 
 const imprimirLista=()=>{
  
@@ -16,7 +18,7 @@ const imprimirLista=()=>{
     const miEle = document.createElement("div");
     miEle.id = ind;
     miEle.classList.add("misElementos");
-    miEle.innerHTML = `<P>${el.producto}  ${el.cantidad} KG por  ${el.precio}  € al KG</P>`;
+    miEle.innerHTML = `<P> ${ind+1} =>${el.producto}  ${el.cantidad} KG por  ${el.precio}  € al KG</P>`;
     contenedor.append(miEle);
   });
   
@@ -38,7 +40,6 @@ const eliminarDatos=()=>{
 
 //crear una lista de id de los elemntos 
 const creaListaIds=()=>{
-  const misElementos=document.getElementsByClassName('misElementos');
 
   let listaids = [];
   Array.from(misElementos).forEach(element => {
@@ -54,6 +55,11 @@ setTimeout(() => {
 }, 1);
 
 
+/// borrar elementos
+
+const borrarDatos=(id)=>{
+  document.getElementById(id-1).remove()
+}
 
 
 
@@ -66,6 +72,22 @@ Guardad.addEventListener("click", (e) => {
 
 Eliminar.addEventListener("click", (e) => {
   eliminarDatos();
+})
+
+
+
+borrar.addEventListener("click", (e) => {
+ 
+  const respuesta = prompt("Por favor, ingresa el numero del producto que quieres borrar si son mas de uno separalos con coma ");
+  
+  if(respuesta === ""){
+    const respuesta = prompt("No ingresaste nada ,Por favor, ingresa el numero del producto que quieres borrar si son mas de uno separalos con coma");
+
+  }else if(respuesta.length>1){
+
+  }else if(respuesta.length==1){
+    borrarDatos(respuesta)
+  }
 })
 
 imprimirLista();

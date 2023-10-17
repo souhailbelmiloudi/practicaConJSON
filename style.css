@@ -11,7 +11,7 @@
 }
 
 /* Estilo para los botones */
-#add, #eliminar {
+#add, #eliminar ,#borrar {
     background-color: #007bff; /* Color de fondo azul */
     color: #fff; /* Color del texto blanco */
     padding: 10px 20px; /* Espacio interno de 10 píxeles arriba/abajo y 20 píxeles izquierda/derecha */
