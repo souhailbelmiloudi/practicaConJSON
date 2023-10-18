@@ -1,7 +1,7 @@
 
 ////  1º FASE
 const miCadena =
-  '[{"producto":"Manzanas","cantidad":5,"precio":1.50},{"producto":"Pan","cantidad":2,"precio":2.00},{"producto":"Leche","cantidad":1,"precio":3.00},{"producto":"Huevos","cantidad":12,"precio":0.25}]';
+  '[{"producto":"Manzanas","cantidad":5,"precio":1.50},{"producto":"Pan","cantidad":2,"precio":2.00},{"producto":"Leche","cantidad":1,"precio":3.00},{"producto":"Pollo","cantidad":5,"precio":3.25}]';
 
 const listaCompra = JSON.parse(miCadena);
 
@@ -18,7 +18,7 @@ const imprimirLista=()=>{
     const miEle = document.createElement("div");
     miEle.id = ind;
     miEle.classList.add("misElementos");
-    miEle.innerHTML = `<P> ${ind+1} =>${el.producto}  ${el.cantidad} KG por  ${el.precio}  € al KG</P>`;
+    miEle.innerHTML = `<P> ${ind+1} =>${el.producto} , ${el.cantidad} kilogramo, ${el.precio}  € por kilogramo</P>`;
     contenedor.append(miEle);
   });
   
