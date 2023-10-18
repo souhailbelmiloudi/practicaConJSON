@@ -85,6 +85,11 @@ borrar.addEventListener("click", (e) => {
 
   }else if(respuesta.length>1){
 
+    let listaAborrar=respuesta.split(",");
+    listaAborrar.forEach(el=>{
+      borrarDatos(el)
+    })
+
   }else if(respuesta.length==1){
     borrarDatos(respuesta)
   }
