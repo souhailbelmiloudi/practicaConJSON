@@ -9,6 +9,10 @@ const contenedor = document.getElementById("contenedor");
 const Guardad = document.getElementById("add");
 const Eliminar=document.getElementById("eliminar");
 const misElementos=document.getElementsByClassName('misElementos');
+const borrarpr=document.getElementById("borrarpr");
+const borrar=document.getElementById("borrar");
+
+
 
 
 const imprimirLista=()=>{
@@ -76,7 +80,7 @@ Eliminar.addEventListener("click", (e) => {
 
 
 
-borrar.addEventListener("click", (e) => {
+borrarpr.addEventListener("click", (e) => {
  
   const respuesta = prompt("Por favor, ingresa el numero del producto que quieres borrar si son mas de uno separalos con coma ");
   
@@ -93,6 +97,14 @@ borrar.addEventListener("click", (e) => {
   }else if(respuesta.length==1){
     borrarDatos(respuesta)
   }
+})
+
+borrar.addEventListener("click",(e)=>{
+const listaAborrar =[1,2]
+listaAborrar.forEach(el=>{
+  borrarDatos(el)
+})
+
 })
 
 imprimirLista();
